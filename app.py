@@ -6,7 +6,7 @@ import hmac
 app = Flask(__name__)
 
 # Replace with your Telegram bot token
-BOT_TOKEN = "your-telegram-bot-token"
+BOT_TOKEN = "7593282767:AAFUinSBdi9MDzzoRzw2RKEcB3BkH7qA_rQ"
 
 def verify_telegram_payload(payload: dict, bot_token: str) -> bool:
     """
