@@ -1,12 +1,12 @@
+import os
 from flask import Flask, request, render_template
 import hashlib
 import hmac
-import os
 
 app = Flask(__name__)
 
 # Replace with your Telegram bot token
-BOT_TOKEN = "7593282767:AAFUinSBdi9MDzzoRzw2RKEcB3BkH7qA_rQ"
+BOT_TOKEN = "your-telegram-bot-token"
 
 def verify_telegram_payload(payload: dict, bot_token: str) -> bool:
     """
@@ -31,4 +31,6 @@ def index():
     return render_template("index.html", user_data=init_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use environment variable for the port, default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
